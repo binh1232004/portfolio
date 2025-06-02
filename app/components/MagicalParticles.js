@@ -56,14 +56,16 @@ export default function MagicalParticles() {
         return (
           <div
             key={index}
-            className="absolute rounded-full"
-            style={{
+            className="absolute rounded-full"            style={{
               width: `${size}px`,
               height: `${size}px`,
               background: `radial-gradient(circle, ${color} 0%, ${color.replace('0.', '0.3')} 70%, transparent 100%)`,
               left: `calc(50% + ${x}px)`,
               top: `calc(50% + ${y}px)`,
-              animation: `${animation} ${duration}s ease-in-out infinite`,
+              animationName: animation,
+              animationDuration: `${duration}s`,
+              animationTimingFunction: 'ease-in-out',
+              animationIterationCount: 'infinite',
               animationDelay: `${delay}s`,
               boxShadow: glow,
               filter: 'blur(0.3px)',
@@ -86,14 +88,16 @@ export default function MagicalParticles() {
         return (
           <div
             key={`sparkle-${index}`}
-            className="absolute rounded-full"
-            style={{
+            className="absolute rounded-full"            style={{
               width: `${sparkleSize}px`,
               height: `${sparkleSize}px`,
               background: 'radial-gradient(circle, rgba(255, 255, 255, 0.9) 0%, rgba(251, 146, 60, 0.8) 50%, transparent 100%)',
               left: `calc(50% + ${sparkleX}px)`,
               top: `calc(50% + ${sparkleY}px)`,
-              animation: `twinkleSparkle ${2 + Math.random() * 2}s ease-in-out infinite`,
+              animationName: 'twinkleSparkle',
+              animationDuration: `${2 + Math.random() * 2}s`,
+              animationTimingFunction: 'ease-in-out',
+              animationIterationCount: 'infinite',
               animationDelay: `${sparkleDelay}s`,
               boxShadow: '0 0 4px rgba(255, 255, 255, 0.8), 0 0 8px rgba(251, 146, 60, 0.6)',
               filter: 'blur(0.2px)',

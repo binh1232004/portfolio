@@ -11,10 +11,10 @@ export default function ProjectsSection({ isVisible, projectsData }) {
                     : "opacity-0 translate-y-10"
             }`}
         >
-            <h2 className="text-3xl md:text-5xl font-light text-center mb-16 backdrop-blur-sm">
+            {" "}
+            <h2 className="text-elegant-3xl md:text-elegant-5xl font-elegant-heading text-center mb-16 backdrop-blur-sm text-render-elegant">
                 Projects
             </h2>
-
             {/* Timeline container */}
             <div className="relative pl-8 md:pl-16">
                 {/* Vertical line with enhanced glow - Dynamic height */}
@@ -49,8 +49,7 @@ export default function ProjectsSection({ isVisible, projectsData }) {
                                     brightness(1.1)
                                     contrast(1.1)
                                 `,
-                                animation:
-                                    "softPulse 6s ease-in-out infinite",
+                                animation: "softPulse 6s ease-in-out infinite",
                             }}
                         />
 

@@ -1,14 +1,15 @@
-import { TECH_WORDS } from '../../constants/index';
+import { TECH_WORDS } from "../../constants/index";
 
 export default function HeroSection({ isVisible, typedText }) {
     return (
         <section className="relative w-full h-screen overflow-hidden">
+            {" "}
             {/* Animated background tech words overlay */}
             <div className="absolute inset-0 opacity-20 z-20 pointer-events-none">
                 {TECH_WORDS.map((word, index) => (
                     <div
                         key={index}
-                        className={`absolute text-gray-400 text-sm animate-pulse`}
+                        className={`absolute text-gray-400 text-sm font-mono-elegant animate-pulse`}
                         style={{
                             top: `${Math.random() * 80 + 10}%`,
                             left: `${Math.random() * 80 + 10}%`,
@@ -20,7 +21,6 @@ export default function HeroSection({ isVisible, typedText }) {
                     </div>
                 ))}
             </div>
-
             {/* Header text overlay on 3D section */}
             <div className="absolute inset-0 z-30 flex flex-col items-center justify-center pointer-events-none">
                 <div
@@ -30,18 +30,19 @@ export default function HeroSection({ isVisible, typedText }) {
                             : "opacity-0 translate-y-10"
                     }`}
                 >
-                    <h1 className="text-4xl md:text-6xl font-light mb-4 min-h-[80px] flex items-center justify-center backdrop-blur-sm bg-black/20 rounded-2xl px-8 py-4">
+                    {" "}
+                    <h1 className="text-elegant-4xl md:text-elegant-6xl font-elegant-heading text-render-elegant mb-4 min-h-[80px] flex items-center justify-center backdrop-blur-sm bg-black/20 rounded-2xl px-8 py-4">
                         <span className="text-white">
                             {typedText.includes("Binh") ? (
                                 <>
                                     {typedText.replace("Binh", "")}
-                                    <span className="text-orange-400 font-medium">
+                                    <span className="text-orange-400 font-semibold">
                                         Binh
                                     </span>
                                 </>
                             ) : (
                                 <>
-                                    <span className="text-orange-400 font-medium">
+                                    <span className="text-orange-400 font-semibold">
                                         {typedText}
                                     </span>
                                 </>
@@ -51,7 +52,6 @@ export default function HeroSection({ isVisible, typedText }) {
                     </h1>
                 </div>
             </div>
-
             {/* Enhanced scroll indicator */}
             <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce z-30">
                 <div

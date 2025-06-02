@@ -6,9 +6,8 @@ export default function ProjectEntity({ projectNum, date, title, description, ur
            style={{
              boxShadow: '0 0 15px rgba(251, 146, 60, 0.8)'
            }}></div>
-      
-      {/* Date */}
-      <div className="absolute -left-0 lg:-left-30 text-orange-400 text-sm font-mono bg-orange-400/20 backdrop-blur-sm px-3 py-2 rounded-lg border border-orange-400/30">
+        {/* Date */}
+      <div className="absolute -left-0 lg:-left-30 text-orange-400 text-sm font-mono-elegant bg-orange-400/20 backdrop-blur-sm px-3 py-2 rounded-lg border border-orange-400/30">
         {date}
       </div>
       
@@ -32,10 +31,9 @@ export default function ProjectEntity({ projectNum, date, title, description, ur
           
           {/* Enhanced project preview */}
           <div className="bg-gradient-to-br from-red-200/90 via-orange-100/90 to-yellow-100/90 backdrop-blur-sm p-6 h-48 flex items-center justify-center relative overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-br from-orange-400/20 to-red-400/20"></div>
-            <div className="text-center relative z-10">
-              <h3 className="text-2xl font-bold text-gray-800 mb-2">{title}</h3>
-              <p className="text-gray-600 text-sm mb-4">{description}</p>
+            <div className="absolute inset-0 bg-gradient-to-br from-orange-400/20 to-red-400/20"></div>            <div className="text-center relative z-10">
+              <h3 className="text-elegant-2xl font-elegant-subheading text-gray-800 mb-2 text-render-elegant">{title}</h3>
+              <p className="text-gray-600 text-sm font-elegant-body mb-4">{description}</p>
               <div className="flex justify-center space-x-2">
                 <div className="w-3 h-3 bg-blue-500 rounded-full animate-bounce shadow-lg"></div>
                 <div className="w-3 h-3 bg-green-500 rounded-full animate-bounce shadow-lg" style={{animationDelay: '0.1s'}}></div>

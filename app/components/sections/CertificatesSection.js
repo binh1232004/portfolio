@@ -9,7 +9,8 @@ export default function CertificatesSection({ isVisible, certificatesData }) {
                     : "opacity-0 translate-y-10"
             }`}
         >
-            <h2 className="text-3xl md:text-5xl font-light text-center mb-16 backdrop-blur-sm">
+            {" "}
+            <h2 className="text-elegant-3xl md:text-elegant-5xl font-elegant-heading text-center mb-16 backdrop-blur-sm text-render-elegant">
                 Certificates
             </h2>
             <div className="space-y-12">

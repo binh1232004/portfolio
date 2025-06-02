@@ -1,6 +1,9 @@
 import FeaturedProjectEntity from "../FeaturedProjectEntity";
 
-export default function FeaturedProjectsSection({ isVisible, featuredProjectsData }) {
+export default function FeaturedProjectsSection({
+    isVisible,
+    featuredProjectsData,
+}) {
     return (
         <div
             className={`mx-auto px-4 w-full max-w-6xl transition-all duration-1000 delay-700 mt-16 ${
@@ -9,7 +12,8 @@ export default function FeaturedProjectsSection({ isVisible, featuredProjectsDat
                     : "opacity-0 translate-y-10"
             }`}
         >
-            <h2 className="text-3xl md:text-5xl font-light text-center mb-16 backdrop-blur-sm">
+            {" "}
+            <h2 className="text-elegant-3xl md:text-elegant-5xl font-elegant-heading text-center mb-16 backdrop-blur-sm text-render-elegant">
                 Featured Project
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
