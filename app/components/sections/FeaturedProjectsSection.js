@@ -24,6 +24,7 @@ export default function FeaturedProjectsSection({
                         title={project.title}
                         description={project.description}
                         tags={project.tags}
+                        imageUrl={project.imageUrl}
                     />
                 ))}
             </div>

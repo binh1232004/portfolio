@@ -38,7 +38,9 @@ export default function Home() {
 
                 {/* Content Sections */}
                 <div className="relative z-20 bg-gradient-to-br from-black via-gray-900 to-amber-900/20 px-4 py-16">
-                    <MissionSection isVisible={isVisible} />
+                    <div className="mb-32">
+                        <MissionSection isVisible={isVisible} />
+                    </div>
                     <ProjectsSection isVisible={isVisible} projectsData={projectsData} />
                     <FeaturedProjectsSection isVisible={isVisible} featuredProjectsData={featuredProjectsData} />
                     <WorkExperienceSection isVisible={isVisible} workExperienceData={workExperienceData} />

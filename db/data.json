@@ -2,32 +2,19 @@
   "projects": [
     {
       "projectNum": 1,
-      "date": "09/03/2024",
-      "title": "JOHN DOE",
-      "description": "E-commerce Platform",
-      "url": "🛒-commerce"
-    },
-    {
-      "projectNum": 2,
-      "date": "08/15/2024",
-      "title": "PROJECT TWO",
-      "description": "Cloud Infrastructure",
-      "url": "☁️-cloud"
-    },
-    {
-      "projectNum": 3,
-      "date": "07/20/2024",
-      "title": "PROJECT THREE",
-      "description": "DevOps Pipeline",
-      "url": "🔧-devops"
+      "date": "26/11/2025",
+      "title": "Social Media Backend API - CI/CD Pipeline",
+      "description": "I use those technologies: GitLab CI/CD, Gitlab Container Registry, Docker, AWS EC2, AWS Parameter Store, AWS SSM, AWS RDS to deploy a backend API for a social media application with a complete CI/CD pipeline.",
+      "url": "https://cdn-icons-png.flaticon.com/512/5968/5968870.png"
     }
   ],
   "featuredProjects": [
     {
       "num": 1,
-      "title": "Project Title 1",
-      "description": "Enhanced project with 3D visualization and interactive elements.",
-      "tags": "Tags: Three.js, React, WebGL"
+      "title": "Social Media Backend API - CI/CD Pipeline",
+      "description": "Deploy for a backend API for a social media application with a complete CI/CD pipeline.",
+      "tags": "Tags: GitLab CI/CD, Gitlab Container Registry, Docker, AWS EC2, AWS Parameter Store, AWS SSM, AWS RDS",
+      "imageUrl": "https://cdn-icons-png.flaticon.com/512/5968/5968870.png"
     },
     {
       "num": 2,

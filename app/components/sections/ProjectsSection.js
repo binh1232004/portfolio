@@ -5,7 +5,7 @@ import MagicalParticles from "../MagicalParticles";
 export default function ProjectsSection({ isVisible, projectsData }) {
     return (
         <div
-            className={`w-full max-w-6xl mx-auto px-4 mb-16 transition-all duration-1000 delay-500 ${
+            className={`w-full max-w-6xl mx-auto  px-4 mb-16 transition-all duration-1000 delay-500 ${
                 isVisible
                     ? "opacity-100 translate-y-0"
                     : "opacity-0 translate-y-10"
