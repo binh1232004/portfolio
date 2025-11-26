@@ -1,5 +1,4 @@
-import { Low } from 'lowdb'
-import { JSONFile } from 'lowdb'
+import { Low, JSONFile } from 'lowdb'
 import path from 'path';
 import fs from 'fs';
 
@@ -8,15 +7,59 @@ if (typeof window !== 'undefined') {
   throw new Error('Database module should only be used on the server side');
 }
 
-// Initialize the database
-const dbDir = path.join(process.cwd(), 'db');
-const file = path.join(dbDir, 'data.json');
+// Determine the database path based on environment
+const getDbPath = () => {
+  const sourceFile = path.join(process.cwd(), 'public', 'db', 'data.json');
+  
+  // During build (Next.js static generation), return source file path
+  if (process.env.NEXT_PHASE === 'phase-production-build') {
+    return sourceFile;
+  }
+  
+  // In production/development runtime, try multiple writable directories
+  let dbDir;
+  
+  if (process.env.NODE_ENV === 'production') {
+    // Try /tmp first (Linux/Mac), fall back to appdata on Windows
+    dbDir = path.join('/tmp', 'db');
+    
+    // On Windows, /tmp might not work, try TEMP env variable
+    if (!fs.existsSync('/tmp')) {
+      dbDir = path.join(process.env.TEMP || process.env.TMP || '.db', 'portfolio-db');
+    }
+  } else {
+    // Local development - use .db directory
+    dbDir = path.join(process.cwd(), '.db');
+  }
+  
+  // Ensure db directory exists (safe to do at runtime)
+  try {
+    if (!fs.existsSync(dbDir)) {
+      fs.mkdirSync(dbDir, { recursive: true });
+    }
+  } catch (error) {
+    console.log('Warning: Could not create db directory at', dbDir, '- using source file');
+    // Fallback to source file if we can't create directory
+    return sourceFile;
+  }
+  
+  const file = path.join(dbDir, 'data.json');
+  
+  // Copy initial data from public/db if it exists and target doesn't have it yet
+  if (!fs.existsSync(file) && fs.existsSync(sourceFile)) {
+    try {
+      const data = fs.readFileSync(sourceFile, 'utf8');
+      fs.writeFileSync(file, data, 'utf8');
+    } catch (error) {
+      console.log('Could not copy initial data:', error.message);
+      return sourceFile;
+    }
+  }
+  
+  return file;
+};
 
-// Ensure db directory exists
-if (!fs.existsSync(dbDir)) {
-  fs.mkdirSync(dbDir, { recursive: true });
-}
-
+const file = getDbPath();
 const adapter = new JSONFile(file)
 const db = new Low(adapter)
 
