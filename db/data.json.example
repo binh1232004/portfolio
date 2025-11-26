@@ -15,8 +15,25 @@
       "description": "Deploy for a backend API for a social media application with a complete CI/CD pipeline.",
       "tags": "Tags: GitLab CI/CD, Gitlab Container Registry, Docker, AWS EC2, AWS Parameter Store, AWS SSM, AWS RDS",
       "imageUrl": "https://cdn-icons-png.flaticon.com/512/5968/5968870.png"
+    },
+    {
+      "num": 2,
+      "title": "Project Title 2",
+      "description": "Enhanced project with 3D visualization and interactive elements.",
+      "tags": "Tags: Three.js, React, WebGL"
     }
   ],
-  "workExperience": [],
+  "workExperience": [
+    {
+      "date": "09/03/2024 - Present",
+      "title": "Three-month apprentice at Company X",
+      "description": "Cloud engineering and DevOps implementation."
+    },
+    {
+      "date": "06/01/2023 - 08/30/2024",
+      "title": "Three-month apprentice at Company Y",
+      "description": "Full-stack development and 3D visualization."
+    }
+  ],
   "certificates": []
 }
